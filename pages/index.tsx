@@ -1,4 +1,10 @@
+import useInputState from "../hooks/useInputState";
+
 export default function Index({}) {
+  const name = useInputState();
+  const email = useInputState();
+  const message = useInputState();
+
   return (
     <>
       <div className="landing">
@@ -40,8 +46,8 @@ export default function Index({}) {
             >
               <img src="/linkedin.svg" alt="LinkedIn" />
             </a>
-            <a href="https://akhilkala.medium.com/" className="social">
-              <img src="/medium.svg" alt="Medium" />
+            <a href="mailto:kalaakki@gmail.com" className="social">
+              <img src="/mail.svg" alt="Mail" />
             </a>
           </div>
         </main>
@@ -56,6 +62,24 @@ export default function Index({}) {
           urna ipsum ultricies.{" "}
         </p>
         <img src="/paper-plane.svg" className="paper-plane" />
+        <form>
+          <div className="form">
+            <div className="input">
+              <label htmlFor="name">NAME</label>
+              <input id="name" type="text" {...name.props} />
+            </div>
+            <div className="input">
+              <label htmlFor="email">EMAIL</label>
+              <input id="email" type="text" {...email.props} />
+            </div>
+            <div className="input">
+              <label htmlFor="message">MESSAGE</label>
+              <textarea id="message" {...message.props} />
+            </div>
+          </div>
+          <img src="/or.svg" alt="OR" className="or" />
+          <div className="socials"></div>
+        </form>
       </div>
     </>
   );
