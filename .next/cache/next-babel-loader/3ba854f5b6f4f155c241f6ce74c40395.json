@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { jsx as _jsx } from \"react/jsx-runtime\";\nimport React from \"react\";\nexport default function SkillCard({}) {\n  return /*#__PURE__*/_jsx(\"div\", {\n    className: \"tech\",\n    children: /*#__PURE__*/_jsx(\"span\", {\n      children: \"React\"\n    })\n  });\n}","map":null,"metadata":{},"sourceType":"module"}

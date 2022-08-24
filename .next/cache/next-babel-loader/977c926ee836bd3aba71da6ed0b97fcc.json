@@ -1,0 +1,1 @@
+{"ast":null,"code":"export default (async (req, res) => {\n  const {\n    name,\n    email,\n    phone,\n    message\n  } = req.body; // await mailer({});\n});","map":null,"metadata":{},"sourceType":"module"}
