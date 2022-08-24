@@ -1,9 +1,15 @@
+import { useState } from "react";
 import useInputState from "../hooks/useInputState";
 
 export default function Index({}) {
   const name = useInputState();
   const email = useInputState();
   const message = useInputState();
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = () => {
+    console.log(name.value);
+  };
 
   return (
     <>
@@ -52,7 +58,9 @@ export default function Index({}) {
           </div>
         </main>
         <img src="/building.svg" className="building" />
-        <img src="/down.svg" className="down-arrow" />
+        <a href="" className="down-arrow">
+          <img src="/down.svg" />
+        </a>
       </div>
       <div id="contact" className="contact">
         <h1>GET IN TOUCH</h1>
@@ -62,7 +70,7 @@ export default function Index({}) {
           urna ipsum ultricies.{" "}
         </p>
         <img src="/paper-plane.svg" className="paper-plane" />
-        <form>
+        <main>
           <div className="form">
             <div className="input">
               <label htmlFor="name">NAME</label>
@@ -78,8 +86,27 @@ export default function Index({}) {
             </div>
           </div>
           <img src="/or.svg" alt="OR" className="or" />
-          <div className="socials"></div>
-        </form>
+          <div className="socials">
+            <a href="https://github.com/akhilkala" className="social">
+              <img src="/github-square.svg" alt="Github" />
+              <span>/akhilkala</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/akhil-kala-b185131b0/"
+              className="social"
+            >
+              <img src="/linkedin-square.svg" alt="LinkedIn" />
+              <span>/in/akhil-kala-b185131b0/</span>
+            </a>
+            <a href="mailto:kalaakki@gmail.com" className="social">
+              <img src="/mail.svg" alt="Mail" />
+              <span>kalaakki@gmail.com</span>
+            </a>
+          </div>
+        </main>
+        <button onClick={handleSubmit} className="send">
+          Send <img src="/right.png" />
+        </button>
       </div>
     </>
   );
